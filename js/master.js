@@ -13,5 +13,5 @@ let landingImgs = [
 // Random Imgs
 setInterval(() => {
   let ranNum = Math.floor(Math.random() * landingImgs.length);
-  lanadingPage.style.backgroundImage = `url("img/${landingImgs[ranNum]}")`;
+  lanadingPage.style.backgroundImage = `url("imgs/${landingImgs[ranNum]}")`;
 }, 5000);
