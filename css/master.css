@@ -13,6 +13,44 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+/* Start Settings */
+.settings {
+    position: relative;
+    z-index: 10000;
+    .settings-container {
+        background-color: var(--main-color);
+        width: 250px;
+        min-height: 100vh;
+        position: absolute;
+        top: 70px;
+        left: -250px;
+        transition: .3s;
+        .settings-icon {
+            background-color: white;
+            border-radius: 0 15px 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            left: 250px;
+            top: 50px;
+            font-size: 15px;
+            transition: .3s ;
+            i {
+                padding: 8px;
+                color: var(--secondary-color);
+            }
+        }
+        .settings-icon:hover { 
+            background-color: var(--btn-color);
+        }
+        }
+        .settings-container.open {
+            left: 0;
+        }
+}
+/* End Settings */
 /* Start Landing Page */
 .landing-page { 
     min-height: 100vh;
@@ -104,6 +142,7 @@ body {
     .text-paragraph {
         font-size: 25px;
         width: 65%;
+        line-height: 1.6;
     }
     .signin { 
         display: flex;

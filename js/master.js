@@ -1,3 +1,9 @@
+// Select Settings Gear Icon
+document.querySelector(".fa-spin").onclick = function () {
+  this.classList.toggle("fa-spin");
+  document.querySelector(".settings-container").classList.toggle("open");
+};
+
 // Select Landing Page
 let lanadingPage = document.querySelector(".landing-page");
 
