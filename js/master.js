@@ -1,27 +1,36 @@
+// localStorage.clear();
 // Check If there's a Local Storage Color
 let mainColors = localStorage.getItem("color_option");
-localStorage.getItem("color_option_one");
+let secColors = localStorage.getItem("color_option_one");
 let secondColors = localStorage.getItem("color_option_two");
 // Retrive The Stored Colors
 if (mainColors !== null) {
-  document.documentElement.style.setProperty(
-    "--main-color",
-    localStorage.getItem("color_option")
-  );
-  document.documentElement.style.setProperty(
-    "--secondary-color",
-    localStorage.getItem("color_option_one")
-  );
+  document.documentElement.style.setProperty("--main-color", mainColors);
+  document.documentElement.style.setProperty("--secondary-color", secColors);
+  // // Remove The Active Class From All
+  // document.querySelectorAll(".colors li").forEach((element) => {
+  //   element.classList.remove("active");
+  //   // Add The Active Class On The Clicked Color
+  //   if (element.dataset.color === mainColors) {
+  //     element.classList.add("active");
+  //   }
+  // });
 }
 if (secondColors !== null) {
-  document.documentElement.style.setProperty(
-    "--main-color",
-    localStorage.getItem("color_option")
-  );
+  document.documentElement.style.setProperty("--main-color", mainColors);
   document.documentElement.style.setProperty(
     "--secondary-color",
     localStorage.getItem("color_option_two", "#F5F3E8")
   );
+  // Remove The Active Class From All
+  document.querySelectorAll(".colors li").forEach((element) => {
+    element.classList.remove("active");
+    // Add The Active Class On The Clicked Color
+    console.log(element);
+    if (element.dataset.color === "#304237") {
+      element.classList.add("active");
+    }
+  });
 }
 
 // Select Settings Gear Icon
