@@ -53,6 +53,7 @@ body {
             left: 0;
         }
 }
+/* Color Options */
 .settings .color-text {
     font-weight: bold;
     font-size: 20px;
@@ -86,6 +87,37 @@ body {
         outline: solid 3px grey;
         width: 37px;
         height: 37px;
+    }
+}
+/* Random Background Options*/
+.background-text {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5px;
+}
+.background-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+    .yes, .no {
+        background-color: var(--secondary-color);
+        /* padding: 5px 10px; */
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: .5;
+        width: 50px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .no {
+        margin-right: 35px;
+    }
+    .active{
+        opacity: 1;
     }
 }
 /* End Settings */

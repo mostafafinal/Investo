@@ -7,14 +7,6 @@ let secondColors = localStorage.getItem("color_option_two");
 if (mainColors !== null) {
   document.documentElement.style.setProperty("--main-color", mainColors);
   document.documentElement.style.setProperty("--secondary-color", secColors);
-  // // Remove The Active Class From All
-  // document.querySelectorAll(".colors li").forEach((element) => {
-  //   element.classList.remove("active");
-  //   // Add The Active Class On The Clicked Color
-  //   if (element.dataset.color === mainColors) {
-  //     element.classList.add("active");
-  //   }
-  // });
 }
 if (secondColors !== null) {
   document.documentElement.style.setProperty("--main-color", mainColors);
@@ -32,7 +24,6 @@ if (secondColors !== null) {
     }
   });
 }
-
 // Select Settings Gear Icon
 document.querySelector(".fa-spin").onclick = function () {
   this.classList.toggle("fa-spin");
@@ -81,6 +72,27 @@ colors.forEach((li) => {
   });
 });
 
+// Random Background Option
+const ranBack = document.querySelectorAll(".background-options span");
+ranBack.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    e.target.parentElement.querySelectorAll(".active").forEach((e) => {
+      e.classList.remove("active");
+    });
+    e.target.classList.add("active");
+    // Random Background Logic
+    if (e.target.dataset.background === "yes") {
+      randomBackOpt = true;
+      randomBackground();
+      localStorage.setItem("background_option", true);
+    } else {
+      randomBackOpt = false;
+      clearInterval(randomBackInterval);
+      localStorage.setItem("background_option", false);
+    }
+  });
+});
+
 // Select Landing Page
 let lanadingPage = document.querySelector(".landing-page");
 
@@ -93,8 +105,39 @@ let landingImgs = [
   "landing-five.jpg",
 ];
 
-// Random Imgs
-setInterval(() => {
-  let ranNum = Math.floor(Math.random() * landingImgs.length);
-  lanadingPage.style.backgroundImage = `url("imgs/${landingImgs[ranNum]}")`;
-}, 5000);
+// Random Background Imgs
+let randomBackOpt = true;
+let randomBackInterval;
+if (randomBackOpt === true) {
+  function randomBackground() {
+    randomBackInterval = setInterval(() => {
+      let ranNum = Math.floor(Math.random() * landingImgs.length);
+      lanadingPage.style.backgroundImage = `url("imgs/${landingImgs[ranNum]}")`;
+    }, 4000);
+  }
+}
+
+randomBackground();
+
+// Check If There's A Stored Background Option
+let randomLocalBack = localStorage.getItem("background_option");
+// Retrive The Stored Background Option
+if (randomLocalBack !== null) {
+  if (randomLocalBack === "true") {
+    randomBackOpt = true;
+  } else {
+    randomBackOpt = false;
+    clearInterval(randomBackInterval);
+  }
+  // Active Class
+  document.querySelectorAll(".background-options span").forEach((span) => {
+    span.classList.remove("active");
+    if (randomLocalBack === "true") {
+      document
+        .querySelector(".background-options .yes")
+        .classList.add("active");
+    } else {
+      document.querySelector(".background-options .no").classList.add("active");
+    }
+  });
+}
