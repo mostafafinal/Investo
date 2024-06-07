@@ -289,3 +289,43 @@ body {
 }
 /* End About Us */
 
+/* Start Skills */
+.skills {
+    background-color: var(--main-color);
+    .container {
+        h2 {
+            color: var(--secondary-color);
+            font-size: 40px;
+            margin: 50px 0;
+        }
+        .skills-box {
+            .skill-box {
+                display: flex;
+                padding: 25px;
+                margin: 10px;
+                background-color: var(--secondary-color);
+                border-radius: 6px;
+                .skill-name {
+                    font-weight: bold;
+                    color: var(--main-color);
+                    text-align: center;
+                    width: 110px;
+                }
+                .skill-progress {
+                    background-color: #8bf6fd3d;
+                    width: calc(100% - 110px);
+                    border-radius: 4px;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        height: 100%;
+                        background-color: #89dbe1;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+ 
+/* End Skills */
