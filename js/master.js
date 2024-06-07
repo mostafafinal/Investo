@@ -141,3 +141,27 @@ if (randomLocalBack !== null) {
     }
   });
 }
+
+// Select Skills
+let ourSkills = document.querySelector(".skills");
+
+// Handling Scrolling
+window.onscroll = function () {
+  // Skills Offset Top
+  let skillsOffsetTop = ourSkills.offsetTop;
+
+  // Skills Outer Height
+  let skillsOuterHeight = ourSkills.offsetHeight;
+
+  // Window Height
+  let windowHeight = this.innerHeight;
+
+  // Window Scroll Top
+  let windowScrollTop = this.scrollY;
+
+  if (windowScrollTop > skillsOffsetTop + skillsOuterHeight - windowHeight) {
+    document.querySelectorAll(".skill-progress span").forEach((skill) => {
+      skill.style.width = skill.dataset.progress;
+    });
+  }
+};
