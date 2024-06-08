@@ -331,3 +331,27 @@ body {
 }
  
 /* End Skills */
+
+/* Start Gallery */
+.gallery {
+    .container {
+        h2 {
+            color: #304237;
+            font-size: 40px;
+            margin: 50px 0; 
+        }
+        .pic-container {
+            text-align: center;
+            img {
+                width: 438px;
+                height: 294px;
+                padding: 3px;
+                background-color: #f6f6f6;
+                border: solid 1px #ccc;
+                cursor: pointer;
+                margin: 5px;
+            }
+        }
+    }
+}
+/* End Gallery */
