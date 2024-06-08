@@ -403,3 +403,114 @@ body {
     }
 }
 /* End Gallery */
+/* Start Timeline */
+.timeline {
+    .clear-space {
+        clear: both;
+    }
+    .container {
+        background-color: var(--main-color);
+        h2 {
+            color: var(--secondary-color);
+            font-size: 40px;
+            margin: 50px 0; 
+        }
+        .timeline-content {
+            position: relative;
+            overflow: hidden;
+            &::before { 
+                content: "";
+                height: 100%;
+                width: 3px;
+                position: absolute;
+                background-color: var(--secondary-color);
+                top: 0;
+                left: 50%;
+            }
+            .year {
+                position: relative;
+                font-weight: bold;
+                z-index: 2;
+                width: 50px;
+                background-color: var(--secondary-color);
+                color: var(--main-color);
+                padding: 5px;
+                text-align: center;
+                margin: 20px auto;
+                border-radius: 4px;
+            }
+            .left,
+            .right {
+                border-radius: 6px;
+                padding: 10px;
+                background-color: var(--secondary-color);
+                color: var(--main-color);
+                text-align: center;
+                width: calc(50% - 25px);
+                h3 {
+                    margin: 20px 0;
+                    font-size: 22px;
+                }
+                p {
+                    line-height: 1.6;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+            }
+            .left {
+                float: left;
+                margin-right: 25px; 
+                margin-bottom: 50px;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-color: var(--main-color);
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    border: 3px solid var(--secondary-color);
+                    right: -36.5px;
+                    top: 20px;
+                }
+                &::after {
+                    top: 21px;
+                    right: -20px;
+                    position: absolute;
+                    content: "";
+                    border-style: solid;
+                    border-color: transparent transparent transparent var(--secondary-color);
+                    border-width: 10px;
+                }
+            }
+            .right {
+                float: right;
+                margin-left: 25px;
+                margin-bottom: 50px;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-color: var(--main-color);
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    border: 3px solid var(--secondary-color);
+                    left: -33.5px;
+                    top: 20px;
+                }
+                &::after {
+                    top: 21px;
+                    left: -20px;
+                    position: absolute;
+                    content: "";
+                    border-style: solid;
+                    border-color: transparent var(--secondary-color) transparent transparent;
+                    border-width: 10px;
+                }
+                }
+            }
+        }
+    }
+}
+/* End Timeline */
