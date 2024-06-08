@@ -179,10 +179,37 @@ theGallery.forEach((img) => {
     // Create The Popup Box
     let popupBox = document.createElement("div");
     popupBox.className = "popup-box";
+    // Handling imgs' alt
+    if (e.target.alt !== null) {
+      // Create Img Headding
+      let imgHead = document.createElement("div");
+      imgHead.className = "Img-head";
+      imgHead.appendChild(document.createTextNode(e.target.alt));
+      popupBox.appendChild(imgHead);
+    }
     // Create The popup Image
     let popupImage = document.createElement("img");
     popupImage.src = e.target.src;
     popupBox.appendChild(popupImage);
     document.body.appendChild(popupBox);
+    // Close Bottom
+    let closePopup = document.createElement("span");
+    closePopup.className = "close-popup";
+    closePopup.appendChild(document.createTextNode("X"));
+    popupBox.appendChild(closePopup);
+    // Handling Popup Close Bottom
+    closePopup.addEventListener("click", (e) => {
+      if (e.target.className === "close-popup") {
+        e.target.parentNode.remove();
+        document.querySelector(".popup-overlay").remove();
+      }
+    });
   });
 });
+// Handling Popup Close Bottom
+// document.addEventListener("click", (e) => {
+//   if (e.target.className === "close-popup") {
+//     e.target.parentNode.remove();
+//     document.querySelector(".popup-overlay").remove();
+//   }
+// });
