@@ -165,3 +165,24 @@ window.onscroll = function () {
     });
   }
 };
+
+// Select Gallery Imgs
+let theGallery = document.querySelectorAll(".pic-container img");
+
+// Loop Over Imgs
+theGallery.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    // Create The Overlay
+    let overLay = document.createElement("div");
+    overLay.className = "popup-overlay";
+    document.body.appendChild(overLay);
+    // Create The Popup Box
+    let popupBox = document.createElement("div");
+    popupBox.className = "popup-box";
+    // Create The popup Image
+    let popupImage = document.createElement("img");
+    popupImage.src = e.target.src;
+    popupBox.appendChild(popupImage);
+    document.body.appendChild(popupBox);
+  });
+});
