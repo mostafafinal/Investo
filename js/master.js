@@ -83,6 +83,36 @@ ranBack.forEach((span) => {
   });
 });
 
+// Show Bullets Option
+const navBullets = document.querySelector(".nav-bullets");
+const bulletsSpans = document.querySelectorAll(".bullets-options span");
+const bulletsLocal = localStorage.getItem("bullets_option");
+if (bulletsLocal !== null) {
+  navBullets.style.display = bulletsLocal;
+  bulletsSpans.forEach((e) => {
+    e.classList.remove("active");
+  });
+  if (bulletsLocal === "block") {
+    document.querySelector(".bullets-options .yes").classList.add("active");
+  } else {
+    document.querySelector(".bullets-options .no").classList.add("active");
+  }
+}
+bulletsSpans.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    // Handling Bullets
+    if (e.target.dataset.display === "show") {
+      navBullets.style.display = "block";
+      localStorage.setItem("bullets_option", "block");
+    } else {
+      navBullets.style.display = "none";
+      localStorage.setItem("bullets_option", "none");
+    }
+    // Handling Bullets Option Active State
+    activeState(e);
+  });
+});
+
 // Navigation Function
 function goTo(element) {
   element.forEach((ele) => {

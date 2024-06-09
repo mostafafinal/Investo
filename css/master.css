@@ -79,6 +79,20 @@ body {
     justify-content: center;
     flex-direction: column;
     border-radius: 4px;
+    .yes, .no {
+        background-color: #304237;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: .5;
+        width: 50px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .active{
+        opacity: 1;
+    }
 }
 /* Color Options */
 .settings-container .color-text {
@@ -120,7 +134,7 @@ body {
     }
 }
 /* Random Background Options*/
-.background-text {
+.option-text {
     margin: 0;
     font-weight: bold;
     font-size: 20px;
@@ -132,20 +146,15 @@ body {
     color: #f6f4ea;
     font-weight: bold;
     margin: 30px 0 0;
-    .yes, .no {
-        background-color: #304237;
-        border-radius: 6px;
-        cursor: pointer;
-        opacity: .5;
-        width: 50px;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .active{
-        opacity: 1;
-    }
+}
+/* Bullets Option */
+.bullets-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: #f6f4ea;
+    font-weight: bold;
+    margin: 30px 0 0;
 }
 /* End Settings */
 /* Start Navigation Bullets */
