@@ -28,7 +28,6 @@ body {
 }
 
 /* Start Settings */
-
     .settings-container {
         position: relative;
         z-index: 1002;
@@ -144,6 +143,33 @@ body {
     }
 }
 /* End Settings */
+/* Start Navigation Bullets */
+.nav-bullets {
+    position: fixed;
+    right: 10px;
+    z-index: 2;
+    transform: translateY(-50%);
+    top: 50%;
+    .bullets {
+        position: relative;
+        padding: 7px;
+        margin: 10px auto;
+        border: solid 3px navajowhite;
+        border-radius: 50%;
+        .tooltip {
+            padding: 4px 10px;
+            background-color: navajowhite;
+            color: #304237;
+            position: absolute;
+            right: 25px;
+            top: -5px;
+            width: 115px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    }
+}
+/* End Navigation Bullets */
 /* Start Landing Page */
 .landing-page { 
     min-height: 100vh;
