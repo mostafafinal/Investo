@@ -29,6 +29,7 @@ body {
 
 /* Start Settings */
     .settings-container {
+        user-select: none;
         position: relative;
         z-index: 1002;
         background-color: #304237;
@@ -38,6 +39,7 @@ body {
         top: 70px;
         left: -250px;
         transition: .3s;
+        border: solid 1px #122b1c;
         .settings-icon {
             background-color: var(--main-color);
             border-radius: 0 15px 15px 0;
@@ -46,13 +48,16 @@ body {
             justify-content: center;
             cursor: pointer;
             position: absolute;
-            left: 250px;
+            left: 249px;
             top: 50px;
             font-size: 15px;
             transition: .3s ;
             i {
                 padding: 8px;
                 color: var(--secondary-color);
+                &:hover {
+                    color: #304237;
+                }
             }
         }
         .settings-icon:hover { 
@@ -189,6 +194,7 @@ body {
 /* End Navigation Bullets */
 /* Start Landing Page */
 .landing-page { 
+    user-select: none;
     min-height: 100vh;
     background-image: url("../imgs/landing-one.jpg");
     background-size: cover;
@@ -342,6 +348,7 @@ body {
             margin: 50px 0;
         }
         .skills-box {
+            user-select: none;
             .skill-box {
                 display: flex;
                 padding: 25px;
@@ -383,6 +390,7 @@ body {
             margin: 50px 0; 
         }
         .pic-container {
+            user-select: none;
             text-align: center;
             img {
                 width: 438px;
@@ -406,6 +414,7 @@ body {
     z-index: 1002;
 }
 .popup-box {
+    user-select: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -458,6 +467,7 @@ body {
             margin: 50px 0; 
         }
         .timeline-content {
+            user-select: none;
             position: relative;
             overflow: hidden;
             &::before { 
@@ -564,6 +574,7 @@ body {
             margin: 50px 0; 
         }
         .features-container {
+            user-select: none;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -651,6 +662,7 @@ body {
             margin: 0px 0px 20px 130px;
         }
         .testimonials-container {
+            user-select: none;
             display: flex;
             justify-content: center;
             .testi {

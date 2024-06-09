@@ -25,7 +25,7 @@ if (secondColors !== null) {
   });
 }
 // Select Settings Gear Icon
-document.querySelector(".fa-spin").onclick = function () {
+document.querySelector(".fa-solid").onclick = function () {
   this.classList.toggle("fa-spin");
   document.querySelector(".settings-container").classList.toggle("open");
 };
@@ -93,16 +93,23 @@ ranBack.forEach((span) => {
   });
 });
 
-// Navigation Bullets Functionality
-let navBullets = document.querySelectorAll(".bullets");
-// Handling Each Bullet
-navBullets.forEach((bullet) => {
-  bullet.addEventListener("click", (e) => {
-    document.querySelector(e.target.dataset.section).scrollIntoView({
-      behavior: "smooth",
+// Navigation Function
+function goTo(element) {
+  element.forEach((ele) => {
+    ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(e.target.dataset.section).scrollIntoView({
+        behavior: "smooth",
+      });
     });
   });
-});
+}
+// Handling Bullets
+const bullets = document.querySelectorAll(".bullets");
+goTo(bullets);
+// Handling Section Links
+const sectionLinks = document.querySelectorAll("a");
+goTo(sectionLinks);
 
 // Select Landing Page
 let lanadingPage = document.querySelector(".landing-page");
