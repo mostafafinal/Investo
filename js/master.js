@@ -18,7 +18,6 @@ if (secondColors !== null) {
   document.querySelectorAll(".colors li").forEach((element) => {
     element.classList.remove("active");
     // Add The Active Class On The Clicked Color
-    console.log(element);
     if (element.dataset.color === "#304237") {
       element.classList.add("active");
     }
@@ -61,14 +60,8 @@ colors.forEach((li) => {
       localStorage.setItem("color_option", color.target.dataset.color);
       localStorage.setItem("color_option_two", "#F5F3E8");
     }
-    // Remove The Active Class From All
-    color.target.parentElement
-      .querySelectorAll(".active")
-      .forEach((element) => {
-        element.classList.remove("active");
-      });
-    // Add The Active Class On The Clicked Color
-    color.target.classList.add("active");
+    // Handle Active State
+    activeState(color);
   });
 });
 
@@ -76,10 +69,7 @@ colors.forEach((li) => {
 const ranBack = document.querySelectorAll(".background-options span");
 ranBack.forEach((span) => {
   span.addEventListener("click", (e) => {
-    e.target.parentElement.querySelectorAll(".active").forEach((e) => {
-      e.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    activeState(e);
     // Random Background Logic
     if (e.target.dataset.background === "yes") {
       randomBackOpt = true;
@@ -110,6 +100,23 @@ goTo(bullets);
 // Handling Section Links
 const sectionLinks = document.querySelectorAll("a");
 goTo(sectionLinks);
+
+// Handle Active State Function
+function activeState(event) {
+  event.target.parentElement.querySelectorAll(".active").forEach((element) => {
+    element.classList.remove("active");
+  });
+  event.target.classList.add("active");
+}
+
+// Select Page Header Navigation Elements
+const allItems = document.querySelectorAll(".items a");
+// Handle Active State
+allItems.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    activeState(e);
+  });
+});
 
 // Select Landing Page
 let lanadingPage = document.querySelector(".landing-page");
