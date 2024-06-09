@@ -154,9 +154,16 @@ body {
         position: relative;
         padding: 7px;
         margin: 10px auto;
-        border: solid 3px navajowhite;
+        border: solid 2px navajowhite;
         border-radius: 50%;
+        cursor: pointer;
+        &:hover .tooltip {
+            display: block;
+        }
         .tooltip {
+            display: none;
+            pointer-events: none;
+            cursor: default;
             padding: 4px 10px;
             background-color: navajowhite;
             color: #304237;
@@ -166,6 +173,16 @@ body {
             width: 115px;
             border-radius: 4px;
             font-weight: bold;
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+                right: -13px;
+                position: absolute;
+                content: "";
+                border-style: solid;
+                border-color: transparent transparent transparent navajowhite;
+                border-width: 7px;
+            }
         }
     }
 }
@@ -286,7 +303,6 @@ body {
 }
 
 /* End Landing Page */
-
 /* Start About Us */
 .aboutus {
     background-color: white;
@@ -356,7 +372,6 @@ body {
         }
     }
 }
- 
 /* End Skills */
 
 /* Start Gallery */
