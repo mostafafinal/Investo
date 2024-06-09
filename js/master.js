@@ -93,6 +93,17 @@ ranBack.forEach((span) => {
   });
 });
 
+// Navigation Bullets Functionality
+let navBullets = document.querySelectorAll(".bullets");
+// Handling Each Bullet
+navBullets.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    document.querySelector(e.target.dataset.section).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
 // Select Landing Page
 let lanadingPage = document.querySelector(".landing-page");
 
