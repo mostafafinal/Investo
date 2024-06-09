@@ -516,10 +516,9 @@ body {
 /* End Timeline */
 /* Start Features */
 .features {
-
     .container {
         h2 {
-            color: var(--secondary-color);
+            color: #304237;
             font-size: 40px;
             margin: 50px 0; 
         }
@@ -580,3 +579,72 @@ body {
     }
 }
 /* End Features */
+/* Start Testimonials */
+.testimonials {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50%;
+        background-color: var(--main-color);
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        top: 0;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 50%;
+        background-color: var(--secondary-color);
+        height: 100%;
+        z-index: -1;
+        right: 0;
+        top: 0;
+    }
+    .container {
+        padding: 80px;
+        h2 {
+            color: var(--secondary-color);
+            font-size: 30px;
+            margin: 0px 0px 20px 130px;
+        }
+        .testimonials-container {
+            display: flex;
+            justify-content: center;
+            .testi {
+                width: calc((80% - 10px) / 3);
+                padding: 15px;
+                border-radius: 6px;
+                background-color: white;
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+                &:nth-child(2) {
+                    position: relative;
+                    bottom: 10px;
+                }
+                }
+                p {
+                    line-height: 1.5;
+                }
+                .testi-person {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 20px;
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        margin-right: 20px;
+                    }
+                    .testi-name {
+                        p {
+                            color: #707070;
+                        }
+                    }
+                }
+            }
+        }
+    }
+/* End Testimonials */
