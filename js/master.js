@@ -282,3 +282,8 @@ theGallery.forEach((img) => {
 //     document.querySelector(".popup-overlay").remove();
 //   }
 // });
+
+// Grid System And Responsive
+document.querySelector(".toggle-menu").onclick = () => {
+  document.querySelector(".items").classList.toggle("open");
+};
