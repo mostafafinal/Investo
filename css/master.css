@@ -8,7 +8,7 @@
     padding: 0;
 }
 :root { 
-    --main-color : #f6f4ea;
+    --main-color : rgb(246, 244, 234);
     --secondary-color : #304237;
     --btn-color: #E6FDB1;
     --active-color: #7caa11;
@@ -721,3 +721,66 @@ body {
         }
     }
 /* End Testimonials */
+/* Start Contact */
+.contact {
+    .overlay {
+        background-color: rgb(246 244 234 / 80%);
+    }
+    position: relative;
+    background-image: url(/imgs/contact.svg);
+    background-size: cover;
+    min-height: 700px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    .container {
+        z-index: 1;
+        h2 {
+            color: #304237;
+            font-size: 40px;
+            margin: 100px 0 50px;
+        }
+        form {
+            display: flex;
+            max-width: 900px;
+            input:not([type="submit"]),
+            textarea {
+                background-color: #ffffff8a;
+                border: 1px solid #304237;
+                width: 100%;
+                padding: 15px;
+                &:focus::placeholder {
+                    opacity: 0;
+                    transition: .3s;
+                }
+                &:not(textarea) {
+                    height: 52px;
+                    }
+                &:not(textarea):not(:last-child) {
+                    margin-bottom: 10px;
+                }
+                &:not(input) {
+                    height: 176px;
+                    margin-bottom: 7px;
+                }
+            }
+            input[type="submit"] {
+                width: 100%;
+                font-weight: bold;
+                height: 52px;
+                border: none;
+                background-color: #304237;
+                color: rgb(246 244 234);
+                cursor: pointer;
+            }
+            .main-inputs {
+                flex: 1;
+                margin-right: 20px;
+            }
+            .sec-inputs {
+                flex: 1;
+            }
+        }
+    }
+}
+/* End Contact */
