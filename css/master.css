@@ -156,6 +156,17 @@ body {
     font-weight: bold;
     margin: 30px 0 0;
 }
+.reset-options {
+    width: 230px;
+    background-color: #f7deb1;
+    border-radius: 4px;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: #304237;
+}
 /* End Settings */
 /* Start Navigation Bullets */
 .nav-bullets {

@@ -113,6 +113,20 @@ bulletsSpans.forEach((span) => {
   });
 });
 
+// Reset Options Button
+document.querySelector(".reset-options").onclick = (e) => {
+  const localItems = [
+    "background_option",
+    "color_option",
+    "color_option_two",
+    "bullets_option",
+  ];
+  localItems.forEach((item) => {
+    localStorage.removeItem(item);
+  });
+  window.location.reload();
+};
+
 // Navigation Function
 function goTo(element) {
   element.forEach((ele) => {
