@@ -643,6 +643,11 @@ body {
         user-select: none;
     }
 }
+@media (max-width: 767px) {
+    .popup-box {
+        width: 70vw;
+    }
+}
 /* End Gallery */
 /* Start Timeline */
 .timeline {
@@ -1103,6 +1108,16 @@ body {
     }
 }
 /* End Contact */
+/* Start Footer */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #304237;
+    color: #F5F3E8;
+    font-weight: bold;
+    font-size: 20px;
+}
+/* End Footer */
 /* Start Grid System */
 @media (max-width: 767px) {
     .container {
