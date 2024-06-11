@@ -232,6 +232,35 @@ body {
     }
 }
 /* End Navigation Bullets */
+/* Scroll To Top Button */
+.to-top {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--active-color);
+    position: fixed;
+    right: 50px;
+    bottom: 90px;
+    border-radius: 50%;
+    z-index: 1;
+    &::before {
+        position: relative;
+        content: "\f062";
+        font-family: 'FontAwesome';
+        font-size: 25px;
+        color: var(--main-color);
+    }
+}
+@media (max-width: 767px) {
+    .to-top {
+        right: 30px;
+        bottom: 50px;
+    }
+}
 /* Start Landing Page */
 .landing-page-header {
     background-color: var(--main-color);
@@ -437,6 +466,7 @@ body {
             }
             .signin {
                 margin-top: 20px;
+                margin-bottom: 20px;
             }
         }
     }
@@ -1124,8 +1154,8 @@ body {
         max-width: 767px;
     }
     body {
-        max-width: 767px;
-    };
+        overflow-x: hidden;
+    }
 }
 @media (max-width: 991px) {
     .container {

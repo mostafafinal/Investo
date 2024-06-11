@@ -295,3 +295,18 @@ document.onclick = (e) => {
     }
   }
 };
+// Scroll To Top
+let scrollArrow = document.createElement("span");
+document.body.appendChild(scrollArrow);
+
+window.onscroll = () => {
+  window.scrollY >= 400
+    ? scrollArrow.classList.add("to-top")
+    : scrollArrow.classList.remove("to-top");
+};
+
+scrollArrow.onclick = () => {
+  window.scrollTo({
+    top: 0,
+  });
+};
