@@ -284,6 +284,14 @@ theGallery.forEach((img) => {
 // });
 
 // Grid System And Responsive
-document.querySelector(".toggle-menu").onclick = () => {
+document.querySelector(".toggle-menu").onclick = (e) => {
+  e.stopPropagation();
   document.querySelector(".items").classList.toggle("open");
+};
+document.onclick = (e) => {
+  if (document.querySelector(".items.open")) {
+    if (e.target !== document.querySelector(".toggle-menu")) {
+      document.querySelector(".items.open").classList.remove("open");
+    }
+  }
 };

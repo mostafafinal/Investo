@@ -279,9 +279,19 @@ body {
     .landing-page-header {
         padding: 25px;
     }
-    .landing-page-header .cta,
     .landing-page-header .items {
         display: none;
+    }
+    .landing-page-header .cta {
+        .signin {
+            display: none;
+        }
+        .login {
+            position: absolute;
+            right: 80px;
+            top: 32px;
+            font-size: 20px;
+        }
     }
     .landing-page-header .logo {
         font-size: 35px;
@@ -295,7 +305,7 @@ body {
             display: block;
             width: 40px;
             height: 5px;
-            background-color: white;
+            background-color: var(--secondary-color);
             border-radius: 4px;
             cursor: pointer;
             &:not(:last-child) {
@@ -304,19 +314,20 @@ body {
         }
     }
     .landing-page-header .items.open {
-        background-color: red;
+        background-color: var(--secondary-color);
         position: absolute;
         display: block;
         width: 300px;
         height: fit-content;
         right: 25px;
         top: 75px;
+        border-radius: 4px;
         &:before {
             position: absolute;
             content: "";
             border-width: 10px;
             border-style: solid;
-            border-color: transparent transparent white;
+            border-color: transparent transparent var(--secondary-color);
             right: 10px;
             top: -20px;
         }
@@ -325,8 +336,9 @@ body {
             display: block;
             text-align: center;
             padding: 15px;
+            color: var(--main-color);
         }
-    }
+        }
 }
 .landing-page { 
     user-select: none;
