@@ -83,6 +83,15 @@ ranBack.forEach((span) => {
   });
 });
 
+// Scroll To Top Button
+let scrollArrow = document.createElement("span");
+document.body.appendChild(scrollArrow);
+scrollArrow.onclick = () => {
+  window.scrollTo({
+    top: 0,
+  });
+};
+
 // Show Bullets Option
 const navBullets = document.querySelector(".nav-bullets");
 const bulletsSpans = document.querySelectorAll(".bullets-options span");
@@ -233,6 +242,10 @@ window.onscroll = function () {
       skill.style.width = skill.dataset.progress;
     });
   }
+  // Scroll To Top Button Handling
+  windowScrollTop >= 400
+    ? scrollArrow.classList.add("to-top")
+    : scrollArrow.classList.remove("to-top");
 };
 
 // Select Gallery Imgs
@@ -294,19 +307,4 @@ document.onclick = (e) => {
       document.querySelector(".items.open").classList.remove("open");
     }
   }
-};
-// Scroll To Top
-let scrollArrow = document.createElement("span");
-document.body.appendChild(scrollArrow);
-
-window.onscroll = () => {
-  window.scrollY >= 400
-    ? scrollArrow.classList.add("to-top")
-    : scrollArrow.classList.remove("to-top");
-};
-
-scrollArrow.onclick = () => {
-  window.scrollTo({
-    top: 0,
-  });
 };
